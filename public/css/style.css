@@ -1,0 +1,23 @@
+/**
+ * Created by Kristina, Buguzov Akhmad, Ruslan Aliev, Isa Eldarhanov, Musa Djamiliev on 27.11.2016.
+ */
+*{ margin:0; padding:0; }
+*:before, *:after, *{box-sizing: border-box;}
+
+html, body {width: 100%;}
+body {font-family: Tahoma; font-size: 20px; width: 100%; overflow-y: scroll; padding: 10px;}
+
+.preloader {position: fixed; display: block; width: 100% !important; height: 100%; top: 0; right: 0; bottom: 0; left: 0;  z-index: 20; background: #fff url("../logo.jpg") no-repeat center;}
+
+#canvas-radial { position: fixed; display: block; width: 100% !important; height: 100%; top: 0; right: 0; bottom: 0; left: 0;  z-index: 1;}
+#wrap {position: relative; z-index: 2; width: 100%; overflow: hidden;}
+
+.but {margin: 10px 0 0;}
+.but input[type="button"] {color:#Fff; background: #F47929; border:none; cursor: pointer; font-weight: bold; padding: 10px; border-radius: 5px; margin: 0 0 20px;}
+#text_field {width: 100%; min-height:400px; height: auto; resize: vertical; padding: 10px;  font-size: 14px; font-family: Tahoma;background: rgba(255, 255, 255, 0.7); border:none ; border-radius: 5px;
+    text-align: justify;
+    hyphens: auto; /*Перенрос букв*/
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+}
