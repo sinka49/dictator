@@ -47,22 +47,9 @@
 
 
 <div id="wrap">
-
-	<div class="but">
-		<input type="button" name="start_recognition" id="say" value="Начать диктовку записи"/>
-		<input type="button" name="pause_recognition" id="pause" disabled value="Приостановить диктовку"/>
-		<input type="button" name="stop_recognition" id="stop" disabled value="Остановить диктовку"/>
-		<input type="button" name="save_recognition" id="save"  value="Сохранить"/>
-
-	</div><!--but-->
-
-	<div class="textarea">
-		<form action="#">
-		<label>Название лекции <input type="text" id="lection_name"></label>
-			<textarea id="text_field" ></textarea>
-		</form>
-	</div>
-<a href="lections.html">Лекции</a>
+<a href="index.html">Главная</a>
+<section id="lections">
+</section>
 </div><!--wrap-->
 <script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
 <script>
@@ -76,43 +63,20 @@
   };
     firebase.initializeApp(config);
   var database = firebase.database();
-  $("#save").on("click", function(){
-  	var textLection = $("#text_field").val();
-  	var nameLection = $("#lection_name").val();
-  	var err = 0;
-  	if (nameLection == "" ) {
-  		var border = $("#lection_name").css("border");
-  		$("#lection_name").css("border","1px solid red");
-  		setTimeout(
-  			function(){
-  				$("#lection_name").css("border",border); 
-  			}, 3000
-  		)
-  		err++;
-  	}
+  /*Достать лекции*/
+  var ref = firebase.database().ref("/lections/");
+  ref.on("value", function(snapshot) {
+  	$("#lection").empty();
+    for (lection in snapshot.val()) {
+        var xRef = firebase.database().ref("/lections/"+lection+"/");
+        xRef.once("value", function(xsnapshot) {
+            var data = xsnapshot.val();
+            var article = "<article id='"+lection+"'><a href='/lection.html?id="+lection+"'><h2>"+data["name"]+"</h2><p>"+data["text"]+"</p></a></article>";
 
-  	if(textLection == ""){
-  		var border = $("#text_field").css("border");
-		$("#text_field").css("border","1px solid red");
-	  	setTimeout(
-	  		function(){
-	  			$("#text_field").css("border",border); 
-	  		}, 3000
-	  	)
-	  	err++;
-  	}
-  	if(err==0){
-  			var newPostRef = firebase.database().ref('lections/').push();
-  			newPostRef.set({
-		   name: nameLection,
-		   text: textLection
-			},function(){
-				//location.reload(true);
-				//перезагрузку после сохранения включить если надо 
-			} 
-		);
-  	}
-  })
-  </script>
+            $("#lections").append(article);
+        });
+    }
+  });
+</script>
 </body>
 </html>

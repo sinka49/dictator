@@ -3,26 +3,12 @@
 [debug] CLI Version:  3.2.0
 [debug] Platform:     win32
 [debug] Node Version: v4.4.7
-[debug] Time:         Tue Nov 29 2016 23:28:20 GMT+0300 (RTZ 2 (зима))
+[debug] Time:         Thu Dec 01 2016 17:13:05 GMT+0300 (RTZ 2 (зима))
 [debug] ----------------------------------------------------------------------
 [debug] 
 [info] Starting Firebase development server...
 [info] 
-[info] Project Directory: C:\Users\User\Desktop\dgunx
-[info] Public Directory: public
-[info] 
-[info] Server listening at: http://localhost:5000
-[debug] ----------------------------------------------------------------------
-[debug] Command:      C:\Program Files\nodejs\node.exe C:\Users\User\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
-[debug] CLI Version:  3.2.0
-[debug] Platform:     win32
-[debug] Node Version: v4.4.7
-[debug] Time:         Thu Dec 01 2016 12:35:19 GMT+0300 (RTZ 2 (зима))
-[debug] ----------------------------------------------------------------------
-[debug] 
-[info] Starting Firebase development server...
-[info] 
-[info] Project Directory: C:\Users\User\Desktop\dgunx
+[info] Project Directory: C:\Users\User\Desktop\progect\dictaror
 [info] Public Directory: public
 [info] 
 [info] Server listening at: http://localhost:5000
